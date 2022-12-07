@@ -1,0 +1,29 @@
+1. установка компонентов из командной строки windows -- shift + пкм - копировать как путь - командная строка от админа - msiexec /i путь allusers=1 
+2. так можно вытащить файл из контейнера -- sudo docker cp ddmweb-ui:/usr/share/nginx/html/env/config.dev.json ~/
+3. войти в контейнер используя sh #или bash -- docker exec -ti "имя контейнера или ID" sh #или bash
+4. wmic product get name, version, vendor - показать проги в командной строке 
+5. wmic product where name=" Имя программы " call uninstall /nointeractive - удалить прогу
+6.  psql -h localhost -d userstoreis -U admin -p 5432 -a -q -f /home/jobs/Desktop/resources/postgresql.sql - запуск скрипта sql
+-h PostgreSQL server IP address
+-d database name
+-U user name
+-p port which PostgreSQL server is listening on
+-f path to SQL script
+
+7. pg_basebackup -h localhost -p 5432 -U postgres -D /tmp/backup
+
+8. Сравнение файлов VSCode
+1) Открыть оба файла в редакторе.
+2) Нажать Ctrl + Shift + P.
+3) Набрать "compare", нажать на "File: Compare Active File With..." и выбрать второй файл
+
+9. pg_dump -h 127.0.0.1 -v -d sdu_780 -f /backup/sdu_780_$(date '+%Y%m%d').dump -U postgres -T *results*  -T *dvtable_view* - создать дамп ПГ
+
+10. psql -h 127.0.0.1 -p 5432 -U postgres -d (имя созданной бд)<(файл дампа) - загрузить из дампа БД
+
+11. чтобы создать бд: psql -U postgres
+там: create database bd_name;
+
+12. sudo docker inspect имя_или_идентификатор_контейнера | grep com.docker.compose.project
+
+0 -вх, 1- исх, 2 - вн
